@@ -1,1 +1,1 @@
-# pre-sommit-hooks
+# pre-commit-hooks
