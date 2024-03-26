@@ -1,13 +1,56 @@
--   id: go-fmt
-    name: 'go fmt'
-    entry: run-go-fmt.sh
-    files: '\.go$'
-    language: 'script'
-    description: "Runs `gofmt`, requires golang"
+- id: go-fmt
+  name: "go fmt"
+  entry: run-go-fmt.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `gofmt`, requires golang"
 
 - id: go-lint
   name: "golint"
-  entry: staticcheck ./...
+  entry: run-go-lint.sh
   files: '\.go$'
   language: "script"
   description: "Runs `staticcheck`, requires golang"
+
+- id: go-vet
+  name: "go vet"
+  entry: run-go-vet.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `go vet`, requires golang"
+
+- id: go-imports
+  name: "go imports"
+  entry: run-go-imports.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `goimports`, requires golang"
+
+- id: go-cyclo
+  name: "go-cyclo"
+  entry: run-go-cyclo.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `gocyclo`, requires https://github.com/fzipp/gocyclo"
+  args: [-over=15]
+
+- id: go-unit-tests
+  name: "go-unit-tests"
+  entry: run-go-unit-tests.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `go test`"
+
+- id: go-mod-tidy
+  name: "go-mod-tidy"
+  entry: run-go-mod-tidy.sh
+  pass_filenames: false
+  language: "script"
+  description: "Runs `go mod tidy -v`, requires golang"
+
+- id: go-mod-vendor
+  name: "go-mod-vendor"
+  entry: run-go-mod-vendor.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `go mod vendor`, requires golang"
