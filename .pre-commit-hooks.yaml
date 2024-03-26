@@ -4,3 +4,10 @@
     files: '\.go$'
     language: 'script'
     description: "Runs `gofmt`, requires golang"
+
+- id: go-lint
+  name: "golint"
+  entry: staticcheck ./...
+  files: '\.go$'
+  language: "script"
+  description: "Runs `staticcheck`, requires golang"
