@@ -1,0 +1,6 @@
+-   id: go-fmt
+    name: 'go fmt'
+    entry: go fmt ./...
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `gofmt`, requires golang"
